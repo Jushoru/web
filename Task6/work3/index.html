@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"> 
+	<title> Оформление заказа </title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+	<h1>Оформление заказа</h1>
+
+	<style>body {background-color: #E9D7D3;}</style>
+
+	<section id="order" class="order">
+		<form action="check.php" method="post">
+			<table>
+				<tr><td>Имя:</td><td><input type="text" id="name" name="name"></td></tr>
+				<tr><td>Фамилия:</td><td><input type="text" id="surname" name="surname"></td></tr>
+				<tr><td>Отчество:</td><td><input type="text" id="patronymic" name="patronymic"></td></tr>
+				<tr><td>Телефон:</td><td><input type="tel" id="phone" name="phone"></td></tr>
+				<tr><td>Email:</td><td><input type="email" id="email" name="email"></td></tr>
+
+				<tr><td>Выберите продукт:</td>
+					<td>
+						<select id="products" name="products">
+							<option value="Puer">Пуэр</option>
+				            <option value="Oolung">Улун</option>
+				            <option value="Milky_oolung">Молочный улун</option>
+				            <option value="Roy_Bush">Рой буш</option>
+				            <option value="Da_Hong_Pao">Да хун пао</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr><td>Адрес:</td><td><input type="text" id="address" name="address"></td></tr>
+				<tr><td>Комментрии:</td><td><input type="text" id="comment" name="comment"></td></tr>
+			</table>
+
+			<button type="submit">Оформить заказ</button>
+		</form>
+	</section>
+
+	<section class="all_tea_type">
+		<img src="img\all_tea_type.png" alt="чаи" class="teas" usemap="#image_map">
+		
+		<map name="image_map" class="teas_map">
+			<area alt="Пуэр" title="Пуэр" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%8D%D1%80" coords="185,133,22,49" shape="rect">
+			<area alt="Улун" title="Улун" onclick="showImage('Cup')" coords="200,88,67" target="_blank" shape="circle">
+			<area alt="Молочный улун" title="Молочный улун" onclick="Description()" coords="370,92,69" shape="circle">
+			<area alt="Рой буш" title="Рой буш" onclick="ConfirmWindow()" coords="540,90,73" shape="circle">
+			<area alt="Да хун пао" title="Да хун пао" href="https://ru.wikipedia.org/wiki/%D0%94%D0%B0_%D1%85%D1%83%D0%BD_%D0%BF%D0%B0%D0%BE" coords="690,97,82" shape="circle">
+			<area alt="Выход" title="Выход" onclick="CloseWindow()" coords="880,48,40" shape="circle">
+		</map>
+		</map>
+
+		
+		<div id="Cup" style="display: none; position: absolute;">
+			<img src="img/teaPot.png"  alt="CupOfTea">
+		</div>
+
+	</section>
+</body>
+<script>
+    function Description() {
+        alert("Молочный улун\nЭто обычный улун, обработанный ароматизатором со вкусом сливок. Не очень романтично, правда? Но все не так плохо. Качественный продукт, при производстве которого используют хорошее сырье и безопасный ароматизатор, вовсе не обязательно исключать из своего «чайного рациона». Он абсолютно безвреден, и даже полезен.");
+    }
+
+	function CloseWindow() {
+		window.close();
+	}
+
+	function ConfirmWindow() {
+		let isRoy = confirm("Это рой буш?");
+		alert(isRoy);
+	}
+
+	var count = 0;
+
+	function showImage(id) {
+		if (count === 0) {
+			document.getElementById(id).style.display = "block";
+		} else {
+			document.getElementById(id).style.display = "none";
+		}
+		count = (count + 1) % 2;
+		
+	
+	}
+</script>
+
+</html>

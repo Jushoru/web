@@ -1,0 +1,22 @@
+{% extends 'teasite/layout.html' %}
+{% load static %}
+{% block content %}
+	<section id="about" class="about">
+			<div class="ab-container">
+				<h1>Портал электронных сервисов системы здравоохранения<br/>"Санкт-Петербурга"</h1>
+				<p>Для доступа ко всем сервисам войдите в личный кабинет</p>
+				<div class=buttons>
+					<button class="button-1">
+						Войти
+					</button>
+					<button class="button-2">
+						Зарегистрироваться
+					</button>
+				</div>
+			</div>
+	</section>
+
+	<div class="ab-img">
+		<img src="{% static 'teasite/img/header.jpg' %}" alt="back" style="width:100%;">
+	</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Главная - Здоровье петербуржца</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'teasite/css/main.css' %}">
+	<link type="Image/x-icon" href="http://favicon.yandex.net/favicon/gorzdrav.spb.ru" rel="icon">
+	<link type="Image/x-icon" href="http://favicon.yandex.net/favicon/gorzdrav.spb.ru" rel="shortcut icon">
+</head>
+
+<body bgcolor="#f0f4f9">
+	<header>
+		<div class="container">
+			<a href="{% url 'index' %}">
+				<img src="{% static 'teasite/img/logo.svg' %}" alt="Здоровье петербуржца" class="logo">
+			</a>
+			<div class="nav-1">
+				<ul class="nav-1">
+					<li>
+						<a href="{% url 'feedback' %}">
+							ОБРАТНАЯ СВЯЗЬ
+						</a>
+					</li>
+					<li>
+						<a href="{% url 'about' %}">
+							О РАЗРАБОТКЕ
+						</a>
+					</li>
+				</ul>
+			</div>
+			<img src="{% static 'teasite/img/navigation-1.svg' %}" alt="navigation-1" class="eye">
+			<div class="nav-2">
+				<img src="{% static 'teasite/img/navigation-2.svg' %}" alt="navigation-2">
+				<img src="{% static 'teasite/img/navigation-3.svg' %}" alt="navigation-3">
+			</div>
+		</div>
+	</header>
+
+	{% block content %}
+	{% endblock %}
+
+	<footer>
+		<div class="container">
+			<div class="info">
+				<span class="copyright">© Здоровье петербуржца</span>
+				<span class="portal">Портал электронных сервисов системы здравоохранения Санкт-Петербурга</span>
+			</div>
+		</div>
+	</footer>
+</body>
+</html> 

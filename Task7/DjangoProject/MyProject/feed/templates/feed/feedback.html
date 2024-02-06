@@ -1,0 +1,16 @@
+{% extends 'teasite/layout.html' %}
+{% load static %}
+{% block content %}
+	<section class="order">
+		<form method="post">
+			<h1 class="feed">Форма обратной связи</h1>
+			{% csrf_token %}
+			{{ form.name }}<br>
+			{{ form.email }}<br>
+			{{ form.comment }}
+			<span>{{ error }}</span>
+			<button type="submit">Отправить</button>
+		</form>
+	</section>
+
+{% endblock %}
